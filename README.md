@@ -39,46 +39,7 @@ graph TD
 
     ML -->|Risk Score| FE
     RAG -->|Personalized Advice| FE
-
 ```
-
-## 🐳 Quick Start (Docker Hub)
-Don't want to build from source? You can pull the pre-built production image directly from Docker Hub.
-
-**Docker Hub Repository:** [agrimcommand/diabetes-assistant](https://hub.docker.com/r/agrimcommand/diabetes-assistant)
-
-### Option 1: The "No-Code" Run
-1. Create a folder and add a `.env` file with your `COHERE_API_KEY`.
-2. Create a file named `docker-compose.yml` with the following content:
-
-```yaml
-services:
-  diabetes-app:
-    image: agrimcommand/diabetes-assistant:v1  # Pulls from Docker Hub
-    container_name: diabetes-assistant
-    ports:
-      - "8501:8501"
-    environment:
-      - COHERE_API_KEY=${COHERE_API_KEY}
-      - DB_DSN=oracle-db:1521/FREEPDB1
-    depends_on:
-      - oracle-db
-
-  oracle-db:
-    image: [container-registry.oracle.com/database/free:latest](https://container-registry.oracle.com/database/free:latest)
-    container_name: oracle-db
-    ports:
-      - "1521:1521"
-    environment:
-      - ORACLE_PWD=mypassword123
-    volumes:
-      - oracle_data:/opt/oracle/oradata
-
-volumes:
-  oracle_data:
-
-
-and then run the application in bash: docker-compose up 
 
 ---
 
@@ -141,8 +102,10 @@ This architecture cleanly separates **knowledge storage**, **retrieval**, and **
 ## 📸 Screenshots
 
 | High Risk Diagnosis | Regional Diet (RAG) | DevOps Deployment |
-|:---:|:---:|:---:|
-| ![Diagnosis](screenshots/diagnosis.png) | ![Diet Plan](screenshots/diet.png) | ![Terminal](screenshots/terminal.png) |
+| ------------------- | ------------------- | ----------------- |
+| *Add screenshot*    | *Add screenshot*    | *Add screenshot*  |
+
+---
 
 ## 🛠️ Installation & Deployment
 
@@ -158,7 +121,7 @@ This project is **fully containerized**. You do **not** need to install Python o
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/agrim-git-hub
+git clone https://github.com/YOUR_USERNAME/Diabetes-Assistant.git
 cd Diabetes-Assistant
 ```
 
@@ -236,6 +199,6 @@ Open your browser and navigate to:
 
 ## 🔗 Connect
 
-Developed by **Agrim Sharma**
+Developed by **[Your Name]**
 
 If you're interested in **AI Engineering**, **MLOps**, **RAG systems**, or **healthcare technology**, feel free to connect on LinkedIn and discuss further.
