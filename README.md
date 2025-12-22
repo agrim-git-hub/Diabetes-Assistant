@@ -103,10 +103,8 @@ This architecture cleanly separates **knowledge storage**, **retrieval**, and **
 ## 📸 Screenshots
 
 | High Risk Diagnosis | Regional Diet (RAG) | DevOps Deployment |
-| ------------------- | ------------------- | ----------------- |
-| *Add screenshot*    | *Add screenshot*    | *Add screenshot*  |
-
----
+|:---:|:---:|:---:|
+| ![Diagnosis](screenshots/diagnosis.png) | ![Diet Plan](screenshots/diet.png) | ![Terminal](screenshots/terminal.png) |
 
 ## 🛠️ Installation & Deployment
 
