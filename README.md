@@ -27,14 +27,14 @@ graph TD
     end
 
     subgraph Application_Container
-        FE -->|1. Extract Clinical Data| NLP[Cohere LLM Extraction]
-        FE -->|2. Predict Risk| ML[XGBoost Classifier]
-        FE -->|3. Query Diet Plan| RAG[RAG Controller]
+        FE -->|Step 1 Extract Data| NLP[Cohere LLM Extraction]
+        FE -->|Step 2 Predict Risk| ML[XGBoost Classifier]
+        FE -->|Step 3 Query Diet| RAG[RAG Controller]
     end
 
     subgraph Database_Container
-        RAG -->|4. Vector Search (Cosine)| ORA[Oracle 23ai Vector DB]
-        ORA -->|5. Return Regional Context| RAG
+        RAG -->|Step 4 Vector Search| ORA[Oracle 23ai Vector DB]
+        ORA -->|Step 5 Return Context| RAG
     end
 
     ML -->|Risk Score| FE
