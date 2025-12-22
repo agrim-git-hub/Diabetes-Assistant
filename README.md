@@ -20,7 +20,6 @@ This project is designed to demonstrate **engineering maturity**: system archite
 
 ## 🏗️ System Architecture
 
-```mermaid
 graph TD
     subgraph "Local Host / User"
         User[User Input] -->|PDF or Text| FE[Streamlit Frontend]
@@ -33,13 +32,12 @@ graph TD
     end
 
     subgraph "Docker Container: Database"
-        RAG -->|4. Vector Search (Cosine)| ORA[(Oracle 23ai DB)]
+        RAG -->|4. Vector Search - Cosine| ORA[("Oracle 23ai DB")]
         ORA -->|5. Return Regional Context| RAG
     end
 
     ML -->|Risk Score| FE
     RAG -->|Personalized Advice| FE
-```
 
 ---
 
