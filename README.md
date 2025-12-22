@@ -40,7 +40,49 @@ graph TD
     ML -->|Risk Score| FE
     RAG -->|Personalized Advice| FE
 ```
+```
+## 🐳 Quick Start (Docker Hub)
+Don't want to build from source? You can pull the pre-built production image directly from Docker Hub.
 
+**Docker Hub Repository:** [agrimcommand/diabetes-assistant](https://hub.docker.com/r/agrimcommand/diabetes-assistant)
+
+### Option 1: The "No-Code" Run
+1. Create a folder and add a `.env` file with your `COHERE_API_KEY`.
+2. Create a file named `docker-compose.yml` with the following content:
+
+```yaml
+services:
+  diabetes-app:
+    image: agrimcommand/diabetes-assistant:v1  # Pulls from Docker Hub
+    container_name: diabetes-assistant
+    ports:
+      - "8501:8501"
+    environment:
+      - COHERE_API_KEY=${COHERE_API_KEY}
+      - DB_DSN=oracle-db:1521/FREEPDB1
+    depends_on:
+      - oracle-db
+
+  oracle-db:
+    image: [container-registry.oracle.com/database/free:latest](https://container-registry.oracle.com/database/free:latest)
+    container_name: oracle-db
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_PWD=mypassword123
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+
+volumes:
+  oracle_data:
+Run the application:
+```
+```
+Bash
+
+docker-compose up
+(Docker will automatically download the 3.5GB App image and the 13GB Oracle Database image and wire them together.)
+```
 ---
 
 ## 🚀 Key Engineering Pillars
