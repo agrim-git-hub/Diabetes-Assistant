@@ -33,12 +33,13 @@ graph TD
     end
 
     subgraph Database_Container
-        RAG -->|4. Vector Search (Cosine)| ORA[(Oracle_23ai_DB)]
+        RAG -->|4. Vector Search (Cosine)| ORA[Oracle 23ai Vector DB]
         ORA -->|5. Return Regional Context| RAG
     end
 
     ML -->|Risk Score| FE
     RAG -->|Personalized Advice| FE
+
 ```
 
 ---
