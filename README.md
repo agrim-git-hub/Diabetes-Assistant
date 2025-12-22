@@ -20,24 +20,26 @@ This project is designed to demonstrate **engineering maturity**: system archite
 
 ## 🏗️ System Architecture
 
+```mermaid
 graph TD
-    subgraph "Local Host / User"
+    subgraph Local_Host_User
         User[User Input] -->|PDF or Text| FE[Streamlit Frontend]
     end
 
-    subgraph "Docker Container: Application"
+    subgraph Application_Container
         FE -->|1. Extract Clinical Data| NLP[Cohere LLM Extraction]
         FE -->|2. Predict Risk| ML[XGBoost Classifier]
         FE -->|3. Query Diet Plan| RAG[RAG Controller]
     end
 
-    subgraph "Docker Container: Database"
-        RAG -->|4. Vector Search - Cosine| ORA[("Oracle 23ai DB")]
+    subgraph Database_Container
+        RAG -->|4. Vector Search (Cosine)| ORA[(Oracle_23ai_DB)]
         ORA -->|5. Return Regional Context| RAG
     end
 
     ML -->|Risk Score| FE
     RAG -->|Personalized Advice| FE
+```
 
 ---
 
