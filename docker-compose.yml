@@ -1,0 +1,30 @@
+services:
+  diabetes-app: #service 1, python web app and main logic
+    build: .
+    container_name: diabetes-assistant
+    ports:
+      - "8501:8501"
+    environment:
+      - COHERE_API_KEY=${COHERE_API_KEY}  # Pulls from .env file
+      - DB_DSN=oracle-db:1521/FREEPDB1
+    depends_on:
+      - oracle-db
+
+  oracle-db: #service 2, Oracle 23ai Vector Databases
+    image: container-registry.oracle.com/database/free:latest
+    container_name: oracle-db
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_PWD=mypassword
+    volumes:
+      - oracle_data:/opt/oracle/oradata # Persists your data so it doesn't disappear on container restart
+volumes:
+  oracle_data: # This "Storage Unit" keeps your vectors safe if you restart Docker
+
+networks:
+  default:
+    driver: bridge
+     
+    
+  

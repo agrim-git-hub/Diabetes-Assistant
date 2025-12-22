@@ -1,0 +1,10 @@
+# Ignore the secrets file so it's not baked into the image
+.env
+
+# Ignore Git history (makes image smaller)
+.git
+.gitignore
+
+# Ignore local virtual envs (Docker installs its own)
+venv
+__pycache__

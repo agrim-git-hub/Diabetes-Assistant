@@ -1,0 +1,15 @@
+# Secrets (CRITICAL)
+.env
+
+# Python clutter
+__pycache__/
+*.pyc
+
+# Virtual Environment (if you have one)
+venv/
+env/
+.venv/
+
+# Docker clutter
+.docker
+tempCodeRunnerFile.py
