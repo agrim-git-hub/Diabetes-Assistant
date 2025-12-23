@@ -241,6 +241,6 @@ Open your browser and navigate to:
 
 ## 🔗 Connect
 
-Developed by **[Your Name]**
+Developed by **Agrim Sharma**
 
 If you're interested in **AI Engineering**, **MLOps**, **RAG systems**, or **healthcare technology**, feel free to connect on LinkedIn and discuss further.
