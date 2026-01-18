@@ -1,3 +1,9 @@
+# AUDIT LOG
+# 1. What this file is supposed to do:
+# 2. What I understand:
+# 3. What I don't understand:
+# 4. One thing that can be improved:
+
 import oracledb
 import os
 import array

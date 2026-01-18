@@ -1,3 +1,12 @@
+# AUDIT LOG
+# 1. What this file is supposed to do:
+# This file is supposed to be the frontend of my project.
+# 2. What I understand:
+# this file first imports the required libraries, then imports my custom function which i made in another file.
+# 3. What I don't understand:
+# Im not quite clear on the session state and the pdf upload reading part
+# 4. One thing that can be improved: Taking the input as a prompt from the user, and then confirming the values with the user using LLM before sending it off to the predictor
+
 import streamlit as st
 import os
 from dotenv import load_dotenv
